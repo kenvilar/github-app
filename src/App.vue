@@ -7,6 +7,6 @@
 
   export default {
     name: 'App',
-    router: router,
+    router,
   };
 </script>
