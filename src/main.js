@@ -4,9 +4,12 @@ import Vue from 'vue';
 import App from './App';
 import './bootstrap';
 
-//Vue.config.productionTip = false;
-
+Vue.config.productionTip = false;
 import './assets/sass/app.scss';
 
 /* eslint-disable no-new */
-new Vue('App').$mount('#app');
+new Vue({
+  el: '#app',
+  components: {App},
+  template: '<App/>',
+});

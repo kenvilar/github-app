@@ -1,6 +1,6 @@
 # github-app
 
-> Github Application with VueJS
+> A Vue.js project
 
 ## Build Setup
 

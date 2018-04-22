@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
   import {router} from './bootstrap';
 
   export default {
-    name: 'GithubApplication',
-    router,
+    name: 'App',
+    router: router,
   };
 </script>

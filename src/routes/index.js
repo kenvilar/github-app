@@ -2,12 +2,12 @@ export default [
   {
     path: '/repositories',
     name: 'repositories',
-    component: require('../pages/repositories/repositories'),
+    components: require('../pages/repositories/Repositories.vue'),
   },
   {
     path: '/user',
     name: 'user',
-    component: require('../pages/user/user'),
+    components: require('../pages/user/User.vue'),
   },
   {
     path: '/',
