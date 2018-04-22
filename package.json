@@ -1,0 +1,27 @@
+{
+  "name": "github-app",
+  "version": "1.0.0",
+  "description": "Github Application with VueJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenvilar/github-app.git"
+  },
+  "keywords": [
+    "['vuejs'",
+    "'github'",
+    "'kenvilar']"
+  ],
+  "author": "Ken Vilar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenvilar/github-app/issues"
+  },
+  "homepage": "https://github.com/kenvilar/github-app#readme",
+  "dependencies": {
+    "vue-cli": "^2.9.3"
+  }
+}
