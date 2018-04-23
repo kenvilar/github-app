@@ -29,6 +29,7 @@
 </template>
 
 <script>
+  import lodash from 'lodash';
   import {router} from './bootstrap';
 
   export default {
@@ -43,7 +44,7 @@
     },
     watch: {
       username: function(username) {
-        console.log(username);
+        this.setUsername(username);
       }
     },
     methods: {
@@ -52,6 +53,12 @@
           this.user = res.data;
         });
       },
+      setUsername: lodash.debounce(function(username) {
+        if (username) {
+          this.fetchUser(username);
+        }
+        console.log(username);
+      }, 500)
     },
     mounted: function() {
       //todo
