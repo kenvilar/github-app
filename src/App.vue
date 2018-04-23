@@ -1,20 +1,30 @@
 <template>
   <div class="page-container">
-    <md-app md-mode="reveal">
-      <md-app-toolbar class="md-medium">
-        <md-button class="md-icon-button">
+    <md-toolbar class="md-medium">
+      <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <h2 class="md-title">Github Application</h2>
+      <md-field class="md-toolbar-offset" style="flex: 1">
+        <md-input placeholder="Search Username"/>
+      </md-field>
+    </md-toolbar>
+    <md-drawer :md-active.sync="menuVisible">
+      <md-toolbar class="md-medium">
+        <md-button class="md-icon-button" md-elevation="0" @click="menuVisible = !menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
-        <h2 class="md-title">Github Application</h2>
-        <md-field class="md-toolbar-offset" style="flex: 1">
-          <md-input placeholder="Search Username"/>
-        </md-field>
-      </md-app-toolbar>
-
-      <md-app-content>
-        <router-view/>
-      </md-app-content>
-    </md-app>
+      </md-toolbar>
+      <md-list>
+        <md-list-item>
+          <md-icon>move_to_inbox</md-icon>
+          <span class="md-list-item-text">Inbox</span>
+        </md-list-item>
+      </md-list>
+    </md-drawer>
+    <md-content>
+      <router-view/>
+    </md-content>
   </div>
 </template>
 
@@ -27,6 +37,7 @@
     data: function() {
       return {
         user: null,
+        menuVisible: false
       };
     },
     methods: {
