@@ -38,6 +38,7 @@
     data: function() {
       return {
         user: null,
+        repos: null,
         menuVisible: false,
         username: null,
       };
@@ -53,13 +54,20 @@
           this.user = res.data;
         });
       },
+      fetchRepositories: function(username) {
+        this.$http.get(`users/${username}/repos`).then(res => {
+          this.repos = res.data;
+        });
+      },
       setUsername: lodash.debounce(function(username) {
         if (username) {
           this.fetchUser(username);
+          this.fetchRepositories(username);
         }
 
         if (!username) {
           this.user = null;
+          this.repos = null;
         }
 
         console.log(username);
