@@ -50,13 +50,13 @@
     },
     methods: {
       fetchUser: function(username) {
-        this.$http.get(`users/${username}`).then(res => {
-          this.user = res.data;
+        this.$http.get(`users/${username}`).then(({data}) => {
+          this.user = data;
         });
       },
       fetchRepositories: function(username) {
-        this.$http.get(`users/${username}/repos`).then(res => {
-          this.repos = res.data;
+        this.$http.get(`users/${username}/repos`).then(({data}) => {
+          this.repos = data;
         });
       },
       setUsername: lodash.debounce(function(username) {
