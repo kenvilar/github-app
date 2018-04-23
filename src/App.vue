@@ -57,6 +57,11 @@
         if (username) {
           this.fetchUser(username);
         }
+
+        if (!username) {
+          this.user = null;
+        }
+
         console.log(username);
       }, 500)
     },
