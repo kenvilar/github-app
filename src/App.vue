@@ -1,5 +1,6 @@
 <template>
   <div class="page-container">
+
     <md-toolbar class="md-medium">
       <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
         <md-icon>menu</md-icon>
@@ -9,22 +10,31 @@
         <md-input placeholder="Search Username" v-model="username"/>
       </md-field>
     </md-toolbar>
+
     <md-drawer :md-active.sync="menuVisible">
+
       <md-toolbar class="md-medium">
         <md-button class="md-icon-button" md-elevation="0" @click="menuVisible = !menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
       </md-toolbar>
+
       <md-list>
         <md-list-item>
-          <md-icon>move_to_inbox</md-icon>
-          <span class="md-list-item-text">Inbox</span>
+          <!--<span class="md-list-item-text" :to="{name: 'repositories'}">Repositories</span>-->
+          <router-link :to="{name: 'repositories'}">Repositories</router-link>
+        </md-list-item>
+        <md-list-item>
+          <router-link :to="{name: 'user'}">User</router-link>
         </md-list-item>
       </md-list>
+
     </md-drawer>
+
     <md-content>
       <router-view/>
     </md-content>
+
   </div>
 </template>
 
