@@ -1,10 +1,40 @@
 <template>
   <div>
-    Repositories Page
+
+    <md-table md-card>
+
+      <md-table-toolbar>
+        <h1 class="md-title">Repositories</h1>
+      </md-table-toolbar>
+
+      <md-table-row>
+        <md-table-head>Name</md-table-head>
+        <md-table-head>Description</md-table-head>
+        <md-table-head>Number of Stars</md-table-head>
+        <md-table-head>Number of Forks</md-table-head>
+        <md-table-head>Number of Open Issues</md-table-head>
+        <md-table-head>language</md-table-head>
+        <md-table-head>Size</md-table-head>
+      </md-table-row>
+
+      <md-table-row v-for="repo in this.$root.repos" :key="repo.id">
+        <md-table-cell>{{ repo.name }}</md-table-cell>
+        <md-table-cell>{{ repo.description }}</md-table-cell>
+        <md-table-cell>{{ repo.stargazers_count }}</md-table-cell>
+        <md-table-cell>{{ repo.forks_count }}</md-table-cell>
+        <md-table-cell>{{ repo.open_issues_count }}</md-table-cell>
+        <md-table-cell>{{ repo.language }}</md-table-cell>
+        <md-table-cell>{{ repo.size }}kb</md-table-cell>
+      </md-table-row>
+
+    </md-table>
+
     <br>
+
     <router-link :to="{name: 'user'}">
       To user page
     </router-link>
+
   </div>
 </template>
 <script src="./repositories.js"></script>

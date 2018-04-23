@@ -9,8 +9,4 @@ Vue.config.productionTip = false;
 import './assets/sass/app.scss';
 
 /* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  components: {App},
-  template: '<App/>',
-});
+new Vue(App).$mount('#app');

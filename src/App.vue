@@ -56,7 +56,7 @@
     watch: {
       username: function(username) {
         this.setUsername(username);
-      }
+      },
     },
     methods: {
       fetchUser: function(username) {
@@ -81,7 +81,7 @@
         }
 
         console.log(username);
-      }, 500)
+      }, 500),
     },
     mounted: function() {
       //todo
