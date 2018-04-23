@@ -6,7 +6,7 @@
       </md-button>
       <h2 class="md-title">Github Application</h2>
       <md-field class="md-toolbar-offset" style="flex: 1">
-        <md-input placeholder="Search Username"/>
+        <md-input placeholder="Search Username" v-model="username"/>
       </md-field>
     </md-toolbar>
     <md-drawer :md-active.sync="menuVisible">
@@ -37,8 +37,14 @@
     data: function() {
       return {
         user: null,
-        menuVisible: false
+        menuVisible: false,
+        username: null,
       };
+    },
+    watch: {
+      username: function(username) {
+        console.log(username);
+      }
     },
     methods: {
       fetchUser: function(username) {
@@ -48,7 +54,7 @@
       },
     },
     mounted: function() {
-      this.fetchUser('kenvilar');
+      //todo
     },
   };
 </script>
