@@ -38,7 +38,7 @@
     data: function() {
       return {
         user: null,
-        repos: null,
+        repos: [],
         menuVisible: false,
         username: null,
       };
@@ -67,7 +67,7 @@
 
         if (!username) {
           this.user = null;
-          this.repos = null;
+          this.repos = [];
         }
 
         console.log(username);
