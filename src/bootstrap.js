@@ -28,6 +28,7 @@ export const router = new VueRouter({
 
 //Vue Material
 import VueMaterial from 'vue-material';
+import 'material-design-icons/iconfont/material-icons.css';
 import 'vue-material/dist/vue-material.css'
 Vue.use(VueMaterial);
 
