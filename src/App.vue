@@ -18,7 +18,7 @@
     },
     methods: {
       fetchUser: function(username) {
-        this.$http.get(`https://api.github.com/users/${username}`).then(res => {
+        this.$http.get(`users/${username}`).then(res => {
           this.user = res.data;
         });
       },
