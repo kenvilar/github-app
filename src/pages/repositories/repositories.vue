@@ -18,7 +18,9 @@
       </md-table-row>
 
       <md-table-row v-for="repo in this.$root.repos" :key="repo.id">
-        <md-table-cell>{{ repo.name }}</md-table-cell>
+        <md-table-cell>
+          <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
+        </md-table-cell>
         <md-table-cell>{{ repo.description }}</md-table-cell>
         <md-table-cell>{{ repo.stargazers_count }}</md-table-cell>
         <md-table-cell>{{ repo.forks_count }}</md-table-cell>
