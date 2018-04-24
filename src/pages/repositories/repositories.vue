@@ -29,6 +29,10 @@
         <md-table-cell>{{ repo.size }}kb</md-table-cell>
       </md-table-row>
 
+      <md-table-row v-if="repos.length === 0">
+        <md-table-cell colspan="7">No repositories found.</md-table-cell>
+      </md-table-row>
+
     </md-table>
 
     <br>
