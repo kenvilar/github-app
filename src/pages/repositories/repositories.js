@@ -4,4 +4,7 @@ export default {
       return this.$root.repos;
     },
   },
+  methods: {
+    //
+  }
 };
