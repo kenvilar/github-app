@@ -22,10 +22,14 @@
       <md-list>
         <md-list-item>
           <!--<span class="md-list-item-text" :to="{name: 'repositories'}">Repositories</span>-->
-          <router-link :to="{name: 'repositories'}">Repositories</router-link>
+          <router-link :to="{name: 'repositories'}">
+            <a @click="menuVisible = !menuVisible">Repositories</a>
+          </router-link>
         </md-list-item>
         <md-list-item>
-          <router-link :to="{name: 'user'}">User</router-link>
+          <router-link :to="{name: 'user'}">
+            <a @click="menuVisible = !menuVisible">User</a>
+          </router-link>
         </md-list-item>
       </md-list>
 
