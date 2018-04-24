@@ -17,7 +17,7 @@
         <md-table-head>Size</md-table-head>
       </md-table-row>
 
-      <md-table-row v-for="repo in this.$root.repos" :key="repo.id">
+      <md-table-row v-for="repo in repos" :key="repo.id">
         <md-table-cell>
           <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
         </md-table-cell>
