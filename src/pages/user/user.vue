@@ -18,21 +18,21 @@
       </md-card-header>
 
       <md-card-content>
-        <p>{{ user.bio }}</p>
+        <p v-if="user.bio">{{ user.bio }}</p>
         <md-list>
-          <md-list-item>
+          <md-list-item v-if="user.location">
             <md-icon>location_on</md-icon>
             <span>{{ user.location }}</span>
           </md-list-item>
-          <md-list-item>
+          <md-list-item v-if="user.public_repos">
             <md-icon>class</md-icon>
             <span>{{ user.public_repos }}</span>
           </md-list-item>
-          <md-list-item>
+          <md-list-item v-if="user.followers">
             <md-icon>people</md-icon>
             <span>{{ user.followers }} followers</span>
           </md-list-item>
-          <md-list-item>
+          <md-list-item v-if="user.following">
             <md-icon>people_outline</md-icon>
             <span>{{ user.following }} following</span>
           </md-list-item>
@@ -40,8 +40,8 @@
       </md-card-content>
 
       <md-card-actions>
-        <md-button :href="user.html_url" target="_blank" class="md-primary">Profile Link</md-button>
-        <md-button :href="user.blog" target="_blank" class="md-primary">Website</md-button>
+        <md-button v-if="user.html_url" :href="user.html_url" target="_blank" class="md-primary">Profile Link</md-button>
+        <md-button v-if="user.blog" :href="user.blog" target="_blank" class="md-primary">Website</md-button>
       </md-card-actions>
 
     </md-card>
