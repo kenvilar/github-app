@@ -66,11 +66,15 @@
       fetchUser: function(username) {
         this.$http.get(`users/${username}`).then(({data}) => {
           this.user = data;
+        }).catch((err) => {
+          //
         });
       },
       fetchRepositories: function(username) {
         this.$http.get(`users/${username}/repos`).then(({data}) => {
           this.repos = data;
+        }).catch((err) => {
+          //
         });
       },
       setUsername: lodash.debounce(function(username) {
@@ -83,8 +87,6 @@
           this.user = null;
           this.repos = [];
         }
-
-        console.log(username);
       }, 500),
     },
     mounted: function() {
