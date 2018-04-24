@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <md-card class="md-primary md-card-user" md-with-hover>
+    <md-card v-if="user" class="md-primary md-card-user" md-with-hover>
 
       <md-card-header>
         <md-card-header-text>
