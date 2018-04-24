@@ -1,50 +1,7 @@
 <template>
   <div>
 
-    <md-card v-if="user" class="md-primary md-card-user" md-with-hover>
-
-      <md-card-header>
-        <md-card-header-text>
-          <div class="md-title">
-            {{ user.login }}
-          </div>
-          <div class="md-subhead">
-            {{ user.name }}
-          </div>
-        </md-card-header-text>
-        <md-card-media>
-          <img :src="user.avatar_url" :alt="user.login">
-        </md-card-media>
-      </md-card-header>
-
-      <md-card-content>
-        <p v-if="user.bio">{{ user.bio }}</p>
-        <md-list>
-          <md-list-item v-if="user.location">
-            <md-icon>location_on</md-icon>
-            <span>{{ user.location }}</span>
-          </md-list-item>
-          <md-list-item v-if="user.public_repos">
-            <md-icon>class</md-icon>
-            <span>{{ user.public_repos }}</span>
-          </md-list-item>
-          <md-list-item v-if="user.followers">
-            <md-icon>people</md-icon>
-            <span>{{ user.followers }} followers</span>
-          </md-list-item>
-          <md-list-item v-if="user.following">
-            <md-icon>people_outline</md-icon>
-            <span>{{ user.following }} following</span>
-          </md-list-item>
-        </md-list>
-      </md-card-content>
-
-      <md-card-actions>
-        <md-button v-if="user.html_url" :href="user.html_url" target="_blank" class="md-primary">Profile Link</md-button>
-        <md-button v-if="user.blog" :href="user.blog" target="_blank" class="md-primary">Website</md-button>
-      </md-card-actions>
-
-    </md-card>
+    <user-card v-if="user" :user="user"/>
 
     <br>
     <router-link :to="{name: 'repositories'}">
@@ -52,4 +9,6 @@
     </router-link>
   </div>
 </template>
+
+
 <script src="./user.js"></script>
